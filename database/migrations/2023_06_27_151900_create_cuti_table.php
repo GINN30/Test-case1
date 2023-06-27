@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cuti', function (Blueprint $table) {
             $table->id();
-            $table->string('nomer_induk')->unique();
+            $table->string('nomer_induk');
             $table->foreign('nomer_induk')->references('nomer_induk')->on('karyawan');
             $table->date('tanggal_cuti');
             $table->integer('lama_cuti');
