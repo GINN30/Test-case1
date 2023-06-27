@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CutiController;
+use App\Http\Controllers\KaryawanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/karyawan/first_three', [KaryawanController::class, 'firstThree'])->name('karyawan.first_three');
+Route::resource('karyawan', KaryawanController::class);
+Route::resource('cuti', CutiController::class);
