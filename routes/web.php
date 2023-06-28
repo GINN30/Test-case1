@@ -19,6 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/welcome', function(){
+    return view('home.index');
+});
+// Route Soal nomer 1
 Route::get('/karyawan/first_three', [KaryawanController::class, 'firstThree'])->name('karyawan.first_three');
+// Route Soal nomer 2
+Route::get('/allcutis', [CutiController::class, 'allcutis'])->name('cuti.alldatas');
+// Route Soal nomer 3
+Route::get('/cuti/karyawan', [CutiController::class, 'moreone'])->name('cuti.moreone');
+// ROute Endpoint Soal nomer 4
+Route::get('/cuti/karyawan/sisa', [KaryawanController::class, 'sisaCuti'])->name('cuti.sisa');
 Route::resource('karyawan', KaryawanController::class);
 Route::resource('cuti', CutiController::class);

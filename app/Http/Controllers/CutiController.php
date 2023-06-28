@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cuti;
+use App\Models\Karyawan;
 use Illuminate\Http\Request;
 
 class CutiController extends Controller
@@ -14,6 +15,23 @@ class CutiController extends Controller
     {
         //
     }
+
+    public function allcutis()
+    {
+        //
+        $getAllcuti = Cuti::with(
+            'karyawan'
+        )->get();
+
+        return view('cuti.index', compact('getAllcuti'));
+    }
+
+    public function moreone(){
+        $karyawan = Karyawan::has('cuti', '>', 1)->with('cuti')->get();
+
+        return view('cuti.moreone', compact('karyawan'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

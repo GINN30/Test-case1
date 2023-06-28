@@ -8,10 +8,26 @@ use Illuminate\Http\Request;
 class KaryawanController extends Controller
 {
     // display 3 karyawan yang pertama kali bergabung
-    public function firstThree(){
+    public function firstThree()
+    {
         $karyawan = Karyawan::orderBy('tanggal_bergabung')->limit(3)->get();
         return view('karyawan.first_three', compact('karyawan'));
     }
+    // menampilkan sisa cuti yang dimiliki oleh karyawan
+    public function sisaCuti()
+    {
+        $karyawan = Karyawan::with('cuti')
+            ->select('nomer_induk', 'nama')
+            ->get()
+            ->map(function ($karyawan) {
+                $sisaCuti = 12 - $karyawan->cuti->sum('lama_cuti');
+                $karyawan->sisa_cuti = $sisaCuti > 0 ? $sisaCuti : 0;
+                return $karyawan;
+            });
+
+        return view('karyawan.sisa_cuti', compact('karyawan'));
+    }
+
     /**
      * Display a listing of the resource.
      */

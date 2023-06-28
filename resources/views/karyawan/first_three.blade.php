@@ -1,5 +1,3 @@
-<!-- resources/views/karyawan/first_three.blade.php -->
-
 @extends('layouts')
 
 @section('content')
