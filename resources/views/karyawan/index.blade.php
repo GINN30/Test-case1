@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container shadow px-3 py-3">
         <h2>Daftar Karyawan</h2>
         <a href="{{ route('karyawan.create') }}" class="btn btn-primary mb-3">Tambah Karyawan</a>
 
@@ -11,7 +11,7 @@
             </div>
         @endif
 
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Nomer Induk</th>

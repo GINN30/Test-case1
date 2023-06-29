@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h1>First Three Employees Who Joined</h1>
+    <div class="container shadow px-3 py-3">
+        <h1 class="mb-3">Tiga Karyawan Pertama Perusahaan</h1>
 
-        <table class="table">
+        <table class="table table-warning table-striped">
             <thead>
                 <tr>
                     <th>No</th>

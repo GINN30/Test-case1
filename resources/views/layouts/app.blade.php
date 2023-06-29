@@ -5,19 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Mini System</title>
-    <!-- Add Bootstrap CSS link -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-pzjw8V+F2uT6Ij/h8y6d3Xq6b/nro21p1fjcqy1t3Jg4jXERwlwFwOES4YaSmd3M" crossorigin="anonymous">
+    <!-- include Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap/dist/js/bootstrap.bundle.min.js') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap-icons/font/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap-icons/font/bootstrap-icons.min.css') }}">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">Simple Management</a>
-                <!-- Add your navigation menu items here -->
-            </div>
-        </nav>
+        <ul class="nav justify-content-center bg-dark nav-lg">
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="{{ route('karyawan.index') }}">Karyawan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ route('cuti.index') }}">Cuti</a>
+            </li>
+        </ul>
     </header>
 
     <main>
@@ -26,14 +33,16 @@
 
     <footer class="mt-5 bg-light">
         <div class="container py-3">
-            <p class="text-center">Your footer content here</p>
+            <p class="text-center fw-bold text-uppercase">Adya Ginansah</p>
         </div>
     </footer>
 
-    <!-- Add Bootstrap JS link -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-pzjw8V+F2uT6Ij/h8y6d3Xq6b/nro21p1fjcqy1t3Jg4jXERwlwFwOES4YaSmd3M" crossorigin="anonymous">
-    </script>
+    <!-- include jQuery and Popper.js -->
+    <script src="{{ asset('jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('popper.js/dist/umd/popper.min.js') }}"></script>
+    <!-- include Bootstrap JS -->
+    <script src="{{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
 </body>
 
 </html>

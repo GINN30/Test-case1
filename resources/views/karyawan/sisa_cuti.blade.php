@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
-        <h1>Sisa Cuti Karyawan</h1>
-        <table>
+    <div class="container shadow px-3 py-3">
+        <h1 class="mb-3">Sisa Cuti Karyawan</h1>
+        <table class="table table-primary table-striped">
             <thead>
                 <tr>
                     <th>Nomor Induk</th>
@@ -16,7 +16,7 @@
                     <tr>
                         <td>{{ $karyawan->nomer_induk }}</td>
                         <td>{{ $karyawan->nama }}</td>
-                        <td>{{ $karyawan->sisa_cuti }}</td>
+                        <td>{{ $karyawan->sisa_cuti }} Hari</td>
                     </tr>
                 @endforeach
             </tbody>

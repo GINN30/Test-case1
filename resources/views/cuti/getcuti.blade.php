@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
-        <h1>Daftar Karyawan yang Pernah Mengambil Cuti</h1>
+    <div class="container shadow px-3 py-3">
+        <h1 class="mb-3">Daftar Karyawan yang Pernah Mengambil Cuti</h1>
 
-        <table>
+        <table class="table table-info table-striped">
             <thead>
                 <tr>
                     <th>Nomer Induk</th>
