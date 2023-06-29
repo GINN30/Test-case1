@@ -9,6 +9,13 @@ class Cuti extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nomer_induk',
+        'tanggal_cuti',
+        'lama_cuti',
+        'keterangan',
+    ];
+
     protected $table = 'cuti';
 
     public function karyawan()

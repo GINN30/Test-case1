@@ -9,6 +9,14 @@ class Karyawan extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nomer_induk',
+        'nama',
+        'alamat',
+        'tanggal_lahir',
+        'tanggal_bergabung',
+    ];
+
     protected $table = 'karyawan';
 
     public function cuti()

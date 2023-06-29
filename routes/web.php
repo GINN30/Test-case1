@@ -30,5 +30,6 @@ Route::get('/allcutis', [CutiController::class, 'allcutis'])->name('cuti.alldata
 Route::get('/cuti/karyawan', [CutiController::class, 'moreone'])->name('cuti.moreone');
 // ROute Endpoint Soal nomer 4
 Route::get('/cuti/karyawan/sisa', [KaryawanController::class, 'sisaCuti'])->name('cuti.sisa');
+
 Route::resource('karyawan', KaryawanController::class);
 Route::resource('cuti', CutiController::class);
